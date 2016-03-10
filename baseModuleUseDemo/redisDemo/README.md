@@ -1,4 +1,7 @@
 ### redis
+参考资料:
+[redis命令(redis中文资料站):http://www.redis.cn/commands.html](http://www.redis.cn/commands.html)
+
 准备
 > 安装redis服务器
 
