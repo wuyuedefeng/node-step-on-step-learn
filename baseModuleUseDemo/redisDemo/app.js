@@ -7,7 +7,7 @@ var redis = require("redis");
 redisClient = redis.createClient();
 
 //如果需要验证，还要进行验证
-//client.auth(password, callback);
+//redisClient.auth(password, callback);
 
 //错误监听
 redisClient.on("error", function (err) {
