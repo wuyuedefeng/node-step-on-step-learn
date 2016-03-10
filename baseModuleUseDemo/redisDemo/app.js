@@ -82,9 +82,10 @@ redisClient.hget('user02', "age", redis.print);
 /*redisClient.end();redisClient.quit();  两种方法都可以断掉与redis的连接.
  end()很粗暴，不管3721，一下子退出来了.
  而quit()则是先将语句处理完毕再干净地退出，斯文得很
+ 强烈建议使用quit()方法
  */
-//redisClient.end();
-redisClient.quit();
+//redisClient.end(); // 立即断开和redis的连接
+redisClient.quit();  // 语句全部处理完,断开与redis连接
 
 
 
