@@ -76,6 +76,10 @@ redisClient.hgetall('user01', function(err, hash){
     console.log(hash);
 });
 redisClient.hget('user02', "age", redis.print);
+redisClient.hmget('user01', 'name', 'what', 'age', function(err, arr){
+    console.log('hmget test value--:');
+    console.log(arr);
+});
 
 
 
