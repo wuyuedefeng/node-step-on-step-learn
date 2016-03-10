@@ -9,6 +9,12 @@ redisClient = redis.createClient();
 //如果需要验证，还要进行验证
 //redisClient.auth(password, callback);
 
+// 选择数据库，比如第3个数据库，默认是第0个
+redisClient.select(3, function(err, result) {
+    console.log(err);
+    console.log(result);
+});
+
 //错误监听
 redisClient.on("error", function (err) {
     console.log("Error: " + err);
