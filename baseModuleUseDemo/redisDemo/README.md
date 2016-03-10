@@ -1,7 +1,8 @@
 ### redis
 参考资料:
-> redis手册: [redis命令(redis中文资料站):http://www.redis.cn/commands.html](http://www.redis.cn/commands.html)
-> node包: [redis](https://www.npmjs.com/package/redis)
+redis手册: [redis命令(redis中文资料站):http://www.redis.cn/commands.html](http://www.redis.cn/commands.html)
+node包: [redis](https://www.npmjs.com/package/redis)
+
 准备
 > 安装redis服务器
 
