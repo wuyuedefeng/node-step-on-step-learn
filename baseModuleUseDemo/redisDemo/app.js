@@ -20,6 +20,7 @@ redisClient.on("error", function (err) {
     redis.print，回调函数，将redis的返回值显示出来。上一句执行结果，将返回“OK”. callback is optional: client.set("some key", "some val");
  */
 redisClient.set('test_key', 'test_value1');
+//redisClient.set(['test_key', 'test_value1']);
 //redisClient.set('test_key', 'test_value', redis.print);
 redisClient.get('test_key', function(err, value){
     if (err) throw(err);
@@ -60,6 +61,7 @@ redisClient.hgetall('user03', function(err, hash){
         0如果field原来在map里面已经存在
  */
 redisClient.hset("user01", "name", "wangsen11", redis.print);
+redisClient.hset("user01", "agent", "男", redis.print);
 redisClient.hset(["user02", "age", "222"], redis.print);
 redisClient.hkeys("user01", function (err, replies) {
     console.log(replies.length + " replies:");
@@ -67,14 +69,12 @@ redisClient.hkeys("user01", function (err, replies) {
         console.log("    " + i + ": " + reply);
     });
 });
-console.log('hset user01:');
 redisClient.hget("user01","name",redis.print);
 redisClient.hgetall('user01', function(err, hash){
     if (err) throw(err);
     console.log('user01:');
     console.log(hash);
 });
-console.log('hset user02:');
 redisClient.hget('user02', "age", redis.print);
 
 
