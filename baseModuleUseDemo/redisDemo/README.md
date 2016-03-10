@@ -20,7 +20,7 @@
 > * get: redisClient.hgetall('user01', function(err, hash){});
 > * getHashKeys: redisClient.hkeys("user01", function (err, replies) {});
 
-> 添加修改(key:hash)结构 hash中key和value
+> 操作(添加或修改)(key:hash)结构 hash中key和value. (返回值: integer-reply：含义如下: 1 如果field是一个新的字段, 0 如果field原来在map里面已经存在)
 > * set: redisClient.hset("user01", "name", "wangsen11", redis.print); # 修改key为user01,对应的hash中key为name的值为wangsen11,如果hash中没有该key,将添加name的key,并设置值为wangsen11
 > * set: redisClient.hset(["user02", "age", "222"], redis.print); # 同上
 > * get: redisClient.hget("user01","name",redis.print);# 获取key为user01的hash中key为name的值
