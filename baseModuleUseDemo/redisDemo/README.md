@@ -17,6 +17,7 @@
 > key: hash
 > * set: redisClient.hmset("user01", "name", "wangsen1", "age", "21");
 > * set: redisClient.hmset(["user02", "name", "wangsen2", "age", "22"]); #同上
+> * set: redisClient.hmset("user02", ["name", "wangsen2", "age", "22"]); #同上
 > * set: redisClient.hmset("user03", {name: 'wangsen3', age: 23}); #同上
 > * get: redisClient.hgetall('user01', function(err, hash){});
 > * getHashKeys: redisClient.hkeys("user01", function (err, replies) {});
