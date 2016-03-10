@@ -26,6 +26,24 @@ redisClient.get('test_key', function(err, value){
     console.log('test_key:' + value);
 });
 
+/*
+   === hset hget ===
+   key:key:value
+ */
+redisClient.hset("hset_key1", "test1", "some value", redis.print);
+redisClient.hset(["hset_key1", "test2", "some other value"], redis.print);
+redisClient.hkeys("hset_key1", function (err, replies) {
+    console.log(replies.length + " replies:");
+    replies.forEach(function (reply, i) {
+        console.log("    " + i + ": " + reply);
+    });
+});
+console.log('hset_value1:');
+redisClient.hget("hset_key1","test1",redis.print);
+console.log('hset_value2:');
+redisClient.hget('hset_key1', "test2", redis.print)
+
+
 
 /*
     === hmset hgetall begin ===
@@ -54,9 +72,12 @@ redisClient.hgetall('user03', function(err, obj){
 });
 
 
-/*
-    ===
+/*redisClient.end();redisClient.quit();  两种方法都可以断掉与redis的连接.
+ end()很粗暴，不管3721，一下子退出来了.
+ 而quit()则是先将语句处理完毕再干净地退出，斯文得很
  */
+//redisClient.end();
+redisClient.quit();
 
 
 
