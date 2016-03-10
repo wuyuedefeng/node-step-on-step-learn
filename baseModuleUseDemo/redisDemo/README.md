@@ -12,7 +12,7 @@
 基础方法
 > key: value
 > * set: redisClient.set('test_key', 'test_value1');
->> * get: redisClient.set('test_key', 'test_value1');
+> * get: redisClient.set('test_key', 'test_value1');
 
 > key: hash
 > * set: redisClient.hmset("user01", "name", "wangsen1", "age", "21");
