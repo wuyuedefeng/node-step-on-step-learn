@@ -2,7 +2,7 @@
 准备
 > 安装redis服务器
 
-> 需要redis模块
+> node中安装redis模块
 > * npm install redis --save
 
 使用
