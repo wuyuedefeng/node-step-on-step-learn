@@ -27,49 +27,56 @@ redisClient.get('test_key', function(err, value){
 });
 
 /*
-   === hset hget ===
-   key:key:value
+    === hmset hgetall begin ===
+    key: hash
  */
-redisClient.hset("hset_key1", "test1", "some value", redis.print);
-redisClient.hset(["hset_key1", "test2", "some other value"], redis.print);
-redisClient.hkeys("hset_key1", function (err, replies) {
+// 方法1: client.hmset(hash, key1, val1, ... keyn, valn, [callback])
+redisClient.hmset("user01", "name", "wangsen1", "age", "21");
+redisClient.hgetall('user01', function(err, hash){
+    if (err) throw(err);
+    console.log('user01:');
+    console.log(hash);
+});
+// 方法2:
+redisClient.hmset(["user02", "name", "wangsen2", "age", "22"]);
+redisClient.hgetall('user02', function(err, hash){
+    if (err) throw(err);
+    console.log('user02:');
+    console.log(hash);
+});
+// 方法3: client.hmset(hash, obj[, callback])
+redisClient.hmset("user03", {name: 'wangsen3', age: 23});
+redisClient.hgetall('user03', function(err, hash){
+    if (err) throw(err);
+    console.log('user03:');
+    console.log(hash);
+});
+
+/*
+ === hset hget ===
+ 修改 key:hash 中某个key的值, 或增加新字段并赋值
+ 返回值: integer-reply：含义如下
+        1如果field是一个新的字段
+        0如果field原来在map里面已经存在
+ */
+redisClient.hset("user01", "name", "wangsen11", redis.print);
+redisClient.hset(["user02", "age", "222"], redis.print);
+redisClient.hkeys("user01", function (err, replies) {
     console.log(replies.length + " replies:");
     replies.forEach(function (reply, i) {
         console.log("    " + i + ": " + reply);
     });
 });
-console.log('hset_value1:');
-redisClient.hget("hset_key1","test1",redis.print);
-console.log('hset_value2:');
-redisClient.hget('hset_key1', "test2", redis.print)
-
-
-
-/*
-    === hmset hgetall begin ===
-    key: obj
- */
-// 方法1: client.hmset(hash, key1, val1, ... keyn, valn, [callback])
-redisClient.hmset("user01", "name", "wangsen1", "age", "21");
-redisClient.hgetall('user01', function(err, obj){
+console.log('hset user01:');
+redisClient.hget("user01","name",redis.print);
+redisClient.hgetall('user01', function(err, hash){
     if (err) throw(err);
     console.log('user01:');
-    console.log(obj);
+    console.log(hash);
 });
-// 方法2:
-redisClient.hmset(["user02", "name", "wangsen2", "age", "22"]);
-redisClient.hgetall('user02', function(err, obj){
-    if (err) throw(err);
-    console.log('user02:');
-    console.log(obj);
-});
-// 方法3: client.hmset(hash, obj[, callback])
-redisClient.hmset("user03", {name: 'wangsen3', age: 23});
-redisClient.hgetall('user03', function(err, obj){
-    if (err) throw(err);
-    console.log('user03:');
-    console.log(obj);
-});
+console.log('hset user02:');
+redisClient.hget('user02', "age", redis.print);
+
 
 
 /*redisClient.end();redisClient.quit();  两种方法都可以断掉与redis的连接.
