@@ -4,6 +4,7 @@
 
 准备
 > 配置github授权信息[https://github.com/settings/developers](https://github.com/settings/developers)
+```
 比如
 {
 	"application name": "node-china.club",
@@ -11,6 +12,7 @@
 	"application desc": '123',
 	"Authorization callback URL": 'http://localhost:3000/github/authCallback' #github认证后的回调地址
 }
+```
 
 使用
 > 点击超链接访问github认证地址：
