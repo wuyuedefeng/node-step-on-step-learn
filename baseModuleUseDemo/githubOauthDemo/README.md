@@ -25,7 +25,7 @@
 > 通过token换取用户信息
 > * GET: https://api.github.com/user #set Authorization值为： token，成功后即可返回用户信息
 
-详情请参见demo
+[详情请参见本demo实例](https://github.com/wuyuedefeng/node-step-on-step-learn/tree/master/baseModuleUseDemo/githubOauthDemo)
 
 
 
