@@ -1,0 +1,14 @@
+{
+  "name": "async-demo",
+  "version": "1.0.0",
+  "description": "参考资料: > * node包: [(async)[https://github.com/caolan/async]](https://github.com/caolan/async)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.0.0-rc.2"
+  }
+}
