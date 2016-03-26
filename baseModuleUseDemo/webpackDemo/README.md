@@ -1,3 +1,8 @@
+### webpack 使用配置快速参考
+
+>* 根目录下新建: webpack.config.js
+>* 配置文件
+```JavaScript
 // npm install webpack --save-dev
 var webpack = require('webpack');
 var path = require('path');
@@ -43,3 +48,10 @@ module.exports = {
 };
 
 //  开始编译执行命令: webpack
+```
+
+
+
+
+
+
