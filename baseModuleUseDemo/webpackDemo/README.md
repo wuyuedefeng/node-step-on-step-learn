@@ -51,6 +51,9 @@ module.exports = {
 
 >*  开始编译执行命令: webpack
 
+---
+此demo,配置和注释更加详细. 
+
 
 
 
