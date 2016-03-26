@@ -1,11 +1,15 @@
 // npm install webpack --save-dev
 var webpack = require('webpack');
+var path = require('path');
 module.exports = {
+    //context: __dirname + "/app",
     // webpack开始编译文件的入口
     entry: "./app/assets/javascripts/_webpack.js",
     // 将编译的文件输出到当前目录下的bundle.js文件中
     output: {
-        path: __dirname + '/dist/assets/javascripts',
+        path: './dist',
+        // publicPath的绝对路径'/'指上面path路径
+        publicPath: "/node-step-on-step-learn/baseModuleUseDemo/webpackDemo/dist/",
         filename: "bundle.js"
     },
     module: {
@@ -16,7 +20,15 @@ module.exports = {
             // limit参数,图片小于这个限制,会启动base64编码图片
             // 图片大小小于等于limit 依赖module: url-loader (npm install --save-dev url-loader)
             // 图片大小大于limit 依赖module: file-loader (npm install --save-dev file-loader)
-            {test: /\.(png|jpg)$/, loader: "url?limit=4000"}
+            {test: /\.(png|jpg)$/,
+                //匹配的路径
+                include: [
+                    path.resolve(__dirname, "app/assets/images")
+                ],
+                // 加载图片的路径为上面的output内的publicPath + loader中name的路径
+                // 编译路径为output中path路径 + name的路径
+                loader: "url-loader?limit=6192&name=assets/images/[name].[ext]"
+            }
         ]
     },
     plugins: [
@@ -25,7 +37,7 @@ module.exports = {
     ],
     resolve: {
         alias: {
-            jquery: "./scripts/jquery.min.js"
+            jquery: "./libs/jquery.min.js"
         }
     }
 };
