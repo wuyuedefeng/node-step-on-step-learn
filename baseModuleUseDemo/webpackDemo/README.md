@@ -13,10 +13,10 @@ module.exports = {
     entry: "./app/assets/javascripts/_webpack.js",
     // 将编译的文件输出到当前目录下的bundle.js文件中
     output: {
-        path: './dist',
+        path: './dist', // 打包文件存放的绝对路径
         // publicPath的绝对路径'/'指本js文件的路径
-        publicPath: "/node-step-on-step-learn/baseModuleUseDemo/webpackDemo/dist/",
-        filename: "bundle.js"
+        publicPath: "/node-step-on-step-learn/baseModuleUseDemo/webpackDemo/dist/", //网站运行时的访问路径
+        filename: "bundle.js" //打包后的文件名
     },
     module: {
         loaders: [
@@ -52,7 +52,7 @@ module.exports = {
 >*  开始编译执行命令: webpack   或者: webpack -p  压缩编译(适合生产环境) 
 
 ```
-$ webpack --config XXX.js   //使用另一份配置文件（比如webpack.config2.js）来打包
+$ webpack --config XXX.js   //使用另一份配置文件（比如webpack.config2.js）来打包, 默认是webpack.config.js
 $ webpack --watch   //监听变动并自动打包
 $ webpack -p    //压缩混淆脚本，这个非常非常重要！
 $ webpack -d    //生成map映射文件，告知哪些模块被最终打包到哪里了
