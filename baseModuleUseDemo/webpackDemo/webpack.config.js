@@ -29,8 +29,10 @@ module.exports = {
                 // 编译路径为output中path路径 + name的路径
                 loader: "url-loader?limit=6192&name=assets/images/[name].[ext]"
             },
-            // npm install jsx-loader --save-dev
-            { test: /\.jsx$/, loaders: ['jsx?harmony'] }
+            // react: npm install jsx-loader --save-dev
+            { test: /\.jsx$/, loaders: ['jsx?harmony'] },
+            // scss: npm install sass-loader node-sass --save-dev
+            {test: /\.scss$/, loader: "style!css!sass"}
         ]
     },
     plugins: [

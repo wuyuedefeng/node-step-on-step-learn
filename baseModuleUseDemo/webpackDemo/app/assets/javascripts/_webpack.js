@@ -1,6 +1,8 @@
 // ------  引入css --------
 // npm install css-loader style-loader --save-dev
 require('../stylesheets/style.css');
+// npm install sass-loader node-sass --save-dev
+require('../stylesheets/test.scss');
 
 // ------  引入js ---------
 var text = require('./test.js');

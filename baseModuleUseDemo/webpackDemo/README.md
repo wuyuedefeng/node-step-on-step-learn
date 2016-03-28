@@ -64,6 +64,7 @@ $ webpack -d    //生成map映射文件，告知哪些模块被最终打包到�
 
 // demo中新增集成 react的打包
 
+// demo中新增集成  scss样式打包
 
 
 
