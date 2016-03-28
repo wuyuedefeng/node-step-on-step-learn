@@ -28,7 +28,9 @@ module.exports = {
                 // 加载图片的路径为上面的output内的publicPath + loader中name的路径
                 // 编译路径为output中path路径 + name的路径
                 loader: "url-loader?limit=6192&name=assets/images/[name].[ext]"
-            }
+            },
+            // npm install jsx-loader --save-dev
+            { test: /\.jsx$/, loaders: ['jsx?harmony'] }
         ]
     },
     plugins: [

@@ -19,3 +19,8 @@ console.log($);
 // ---------  加载图片 -------
 // npm install  url-loader file-loader --save-dev
 // 配置文件中在loaders中添加规则,见项目配置文件webpack.config.js
+
+
+// --------- 打包react组件 --------
+require('./testReact.jsx');
+
