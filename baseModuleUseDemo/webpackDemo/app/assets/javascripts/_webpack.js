@@ -9,14 +9,14 @@ var text = require('./test.js');
 document.write(text);
 
 // -------- 将js库的全局方法暴漏出来
-//require('jquery');
-////  这里$符号是无法使用的,前端想要直接用, 需要把jquery暴漏出来。
+//var $ = require('jquery');
+////  主动定义变量 $ 接收才可以使用
 //console.log($);
 
 // 把jquery暴漏出来的方法
 // npm install expose-loader --save-dev
 require('expose?$!jquery');
-console.log($);
+console.log($); //不需要定义变量$接收,直接可以使用
 
 // ---------  加载图片 -------
 // npm install  url-loader file-loader --save-dev
