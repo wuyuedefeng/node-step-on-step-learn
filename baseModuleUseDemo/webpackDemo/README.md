@@ -34,7 +34,11 @@ module.exports = {
                 // 加载图片的路径为上面的output内的publicPath + loader中name的路径
                 // 编译路径为output中path路径 + name的路径
                 loader: "url-loader?limit=6192&name=assets/images/[name].[ext]"
-            }
+            },
+            // react: npm install jsx-loader --save-dev
+            { test: /\.jsx$/, loaders: ['jsx?harmony'] },
+            // scss: npm install sass-loader node-sass --save-dev
+            {test: /\.scss$/, loader: "style!css!sass"}
         ]
     },
     plugins: [
@@ -61,10 +65,6 @@ $ webpack -d    //生成map映射文件，告知哪些模块被最终打包到�
 
 ---
 此demo,配置和注释更加详细.
-
-// demo中新增集成 react的打包
-
-// demo中新增集成  scss样式打包
 
 
 
