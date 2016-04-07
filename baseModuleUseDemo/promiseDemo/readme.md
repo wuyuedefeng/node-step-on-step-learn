@@ -66,3 +66,11 @@ function testPromise2(){
 testPromise2();
 ```
 
+---
+
+> 如果node版本较低,可以使用其他实现Promise标准的库
+>* `bluebird`[github](https://github.com/petkaantonov/bluebird)
+>* `Q`[github](https://github.com/kriskowal/q)
+>* `Deferred`[github](https://github.com/medikoo/deferred)
+
+
