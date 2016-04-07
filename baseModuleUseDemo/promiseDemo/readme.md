@@ -71,5 +71,10 @@ testPromise2();
 >* `bluebird`[github](https://github.com/petkaantonov/bluebird)
 >* `Q`[github](https://github.com/kriskowal/q)
 >* `Deferred`[github](https://github.com/medikoo/deferred)
+>* `then`[github](https://github.com/teambition/then.js)
+>* `when`[github](https://github.com/cujojs/when)
+>* `async`[github](https://github.com/caolan/async)
+>* `eventproxy`[github](https://github.com/JacksonTian/eventproxy)
+
 
 
