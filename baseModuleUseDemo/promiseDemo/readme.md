@@ -8,11 +8,10 @@
 var Promise = require('promise');
 ```
 
-* 使用方法
+* 使用方法`依赖关系顺序执行`
+上一个promise执行完到then中才能在then中执行下一个promise
 
 ```
-// new Promise 依赖关系
-// 上一个promise执行完到then中才能在then中执行下一个promise
 function testPromise(begin) {
     return new Promise(function (resolve, reject) {
         if (begin > 5) {
@@ -36,9 +35,9 @@ testPromise(0);
 ```
 
 
+#### Promise.all`非依赖同时执行`
+多个异步方法同时执行,最后回调
 ```
-// new Promise.all
-// promise同时执行,所有执行成功执行resolve回调,有一个失败就执行reject回调
 function testAllPromise(begin) {
     return new Promise(function (resolve, reject) {
         if (begin > 5) {
