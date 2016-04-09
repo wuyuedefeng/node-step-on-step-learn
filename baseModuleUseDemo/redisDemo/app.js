@@ -29,7 +29,7 @@ redisClient.set('test_key', 'test_value1');
 //redisClient.set(['test_key', 'test_value1']);
 //redisClient.set('test_key', 'test_value', redis.print);
 
-// 设置key多长时间过期
+// 设置key 5s 过期
 redisClient.expire('test_key', 5);
 // 获取,如果key过期将获取到的值null
 redisClient.get('test_key', function(err, value){
