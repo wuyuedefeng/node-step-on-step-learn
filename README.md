@@ -9,3 +9,5 @@
 
 > [webpack 配置](https://github.com/wuyuedefeng/node-step-on-step-learn/tree/master/baseModuleUseDemo/webpackDemo)
 
+> [内置Promise的使用](https://github.com/wuyuedefeng/node-step-on-step-learn/tree/master/baseModuleUseDemo/promiseDemo)
+

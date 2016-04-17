@@ -19,6 +19,7 @@
 > * set: redisClient.set('test_key', 'test_value1');
 > * set: redisClient.set(['test_key', 'test_value1']); #同上
 > * get: redisClient.get('test_key', function(err, value){});
+> * expire: redisClient.expire('test_key', 5); #设置key 5s 过期
 
 > key: hash
 > * set: redisClient.hmset("user01", "name", "wangsen1", "age", "21");

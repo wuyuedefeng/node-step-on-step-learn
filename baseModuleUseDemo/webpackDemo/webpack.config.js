@@ -7,10 +7,10 @@ module.exports = {
     entry: "./app/assets/javascripts/_webpack.js",
     // 将编译的文件输出到当前目录下的bundle.js文件中
     output: {
-        path: './dist',
+        path: './dist', // 打包文件存放的绝对路径
         // publicPath的绝对路径'/'指本js文件的路径
-        publicPath: "/node-step-on-step-learn/baseModuleUseDemo/webpackDemo/dist/",
-        filename: "bundle.js"
+        publicPath: "/node-step-on-step-learn/baseModuleUseDemo/webpackDemo/dist/", //网站运行时的访问路径
+        filename: "bundle.js" //打包后的文件名
     },
     module: {
         loaders: [
@@ -28,7 +28,11 @@ module.exports = {
                 // 加载图片的路径为上面的output内的publicPath + loader中name的路径
                 // 编译路径为output中path路径 + name的路径
                 loader: "url-loader?limit=6192&name=assets/images/[name].[ext]"
-            }
+            },
+            // react: npm install jsx-loader --save-dev
+            { test: /\.jsx$/, loaders: ['jsx?harmony'] },
+            // scss: npm install sass-loader node-sass --save-dev
+            {test: /\.scss$/, loader: "style!css!sass"}
         ]
     },
     plugins: [
